@@ -1,0 +1,10 @@
+.nav-bar {
+  border-bottom: solid 1px #ccc;
+  background-color: #ffffff;
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  background-color: #ffffff;
+  border-bottom: 0;
+}
