@@ -4,6 +4,7 @@ import "./App.css";
 import LoginPage from "./pages/Login";
 import HomePage from "./pages/Home";
 import PrivateRoute from "./components/PrivateRoute";
+import AdmissionPage from "./pages/Admission";
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
       <>
         <Router>
           <PrivateRoute path="/" exact component={HomePage} />
-          <Route path="/signup" />
+          <Route path="/admission" component={AdmissionPage} />
           <Route path="/login" component={LoginPage} />
         </Router>
       </>

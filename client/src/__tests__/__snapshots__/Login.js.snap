@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page it matches the snapshot 1`] = `
+<div
+  className="limiter"
+>
+  <div
+    className="container-login100"
+  >
+    <div
+      className="wrap-login100"
+    >
+      <div
+        className="mb-4"
+      >
+        <img
+          height="auto"
+          src="https://cdn.unapec.edu.do/portal-dynamic/Documentos/descargas/logo_principal/logo-unapec_color.png"
+          width={275}
+        />
+      </div>
+      <form
+        className="login100-form validate-form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <span
+          className="login100-form-title"
+        >
+          Iniciar sesión
+        </span>
+        <div
+          className="wrap-input100 validate-input "
+        >
+          <input
+            className="input100"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email"
+            type="text"
+            value=""
+          />
+          <span
+            className="focus-input100"
+          />
+          <span
+            className="symbol-input100"
+          >
+            <i
+              aria-hidden="true"
+              className="fas fa-envelope"
+            />
+          </span>
+        </div>
+        <div
+          className="container-login100-form-btn"
+        >
+          <button
+            className="login100-form-btn"
+            data-testid="submit-button"
+            disabled={false}
+            type="submit"
+          >
+            <span>
+              Login
+            </span>
+          </button>
+        </div>
+      </form>
+      <div
+        className="mt-2"
+      >
+        <a
+          href="/admission"
+          onClick={[Function]}
+        >
+          Registrar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Login page should matches the snapshot 1`] = `
+<div
+  className="limiter"
+>
+  <div
+    className="container-login100"
+  >
+    <div
+      className="wrap-login100"
+    >
+      <div
+        className="mb-4"
+      >
+        <img
+          height="auto"
+          src="https://cdn.unapec.edu.do/portal-dynamic/Documentos/descargas/logo_principal/logo-unapec_color.png"
+          width={275}
+        />
+      </div>
+      <form
+        className="login100-form validate-form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <span
+          className="login100-form-title"
+        >
+          Iniciar sesión
+        </span>
+        <div
+          className="wrap-input100 validate-input "
+        >
+          <input
+            className="input100"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email"
+            type="text"
+            value=""
+          />
+          <span
+            className="focus-input100"
+          />
+          <span
+            className="symbol-input100"
+          >
+            <i
+              aria-hidden="true"
+              className="fas fa-envelope"
+            />
+          </span>
+        </div>
+        <div
+          className="container-login100-form-btn"
+        >
+          <button
+            className="login100-form-btn"
+            data-testid="submit-button"
+            disabled={false}
+            type="submit"
+          >
+            <span>
+              Login
+            </span>
+          </button>
+        </div>
+      </form>
+      <div
+        className="mt-2"
+      >
+        <a
+          href="/admission"
+          onClick={[Function]}
+        >
+          Registrar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

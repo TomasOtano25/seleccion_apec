@@ -10,11 +10,11 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - "5432:5432"
 
   web:
     build: .
     depends_on:
       - db
     ports:
-      - "9000:9000"
+      - "8001:9000"

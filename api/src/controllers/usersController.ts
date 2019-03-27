@@ -39,7 +39,14 @@ class UsersController {
   }
 
   public async login(req: Request, res: Response): Promise<void> {
-    const user = await User.findOne({ where: { email: req.body.email! } });
+    const { email } = req.body;
+
+    if (!email) {
+      res.sendStatus(400);
+      return;
+    }
+
+    const user = await User.findOne({ where: { email: email } });
 
     if (!user) {
       res.status(401).json({ message: "Auth failed" });

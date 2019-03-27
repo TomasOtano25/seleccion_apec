@@ -12,14 +12,15 @@ import DatabaseConnection from "./DatabaseConnection";
 class Server {
   public app: Application;
 
-  constructor() {
+  async run() {
     this.app = express();
-    this.config();
+    await this.config();
     this.routes();
+    this.start();
   }
 
-  public config(): void {
-    DatabaseConnection.connect();
+  public async config(): Promise<void> {
+    await DatabaseConnection.connect();
 
     this.app.set("port", process.env.PORT || 9000);
     this.app.use(morgan("dev"));
@@ -46,5 +47,4 @@ class Server {
   }
 }
 
-const server = new Server();
-server.start();
+new Server().run();

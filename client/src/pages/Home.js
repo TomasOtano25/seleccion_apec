@@ -82,7 +82,6 @@ const HomePage = () => {
               <div className="card-header">
                 <div className="d-flex">
                   <h4> Mi Seleccion </h4>
-
                   <a className="btn btn-sm btn-primary" href="">
                     Imprimir
                   </a>
