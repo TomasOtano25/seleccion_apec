@@ -18,8 +18,26 @@ export default class User extends BaseEntity {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
+
+  @Column()
+  identificationCard: string;
+
+  @Column()
+  address: string;
+  // TODO: revisar
+  @Column()
+  sex: string;
+
+  @Column()
+  countryOrigin: string;
+
+  @Column({ nullable: true })
+  ownEmail: string;
+
+  @Column()
+  phone: string;
 
   @Column()
   carrerId: number;

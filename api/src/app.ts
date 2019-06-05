@@ -10,6 +10,7 @@ import indexRouter from "./routes/indexRoutes";
 import usersRoutes from "./routes/usersRoutes";
 import subjectsRoutes from "./routes/subjectsRoutes";
 import sectionsRoutes from "./routes/sectionsRoutes";
+import careersRoutes from "./routes/careersRoutes";
 import config from "./config/config";
 
 export class Server {
@@ -51,6 +52,7 @@ export class Server {
     this.app.use("/api/users", usersRoutes);
     this.app.use("/api/subjects", subjectsRoutes);
     this.app.use("/api/sections", sectionsRoutes);
+    this.app.use("/api/careers", careersRoutes);
   }
 
   start(): void {

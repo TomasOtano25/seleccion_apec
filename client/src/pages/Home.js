@@ -77,7 +77,7 @@ const HomePage = () => {
                 />
               </div>
             </div>
-            <Sections sections={sections} />
+            <Sections sections={sections} subject={subject} />
             <div className="card rounded-0 mt-3">
               <div className="card-header">
                 <div className="d-flex">

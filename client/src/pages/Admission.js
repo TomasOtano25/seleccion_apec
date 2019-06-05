@@ -190,7 +190,7 @@ const AdmissionPage = () => {
                       }
                     />
                     <ErrorMessage
-                      name="ownEmail  "
+                      name="ownEmail"
                       component="div"
                       className="invalid-feedback"
                     />

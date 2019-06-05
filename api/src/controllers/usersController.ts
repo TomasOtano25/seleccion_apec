@@ -6,28 +6,36 @@ import { MyRequest } from "../middleware/checkAuth";
 
 class UsersController {
   public async signup(req: Request, res: Response): Promise<void> {
-    /*const { careerId } = req.body;
-    const career = Career.findOne(careerId);
-    console.log(career);*/
-
-    const career = await Career.create({
-      name: "Ingenieria en Software",
-      code: "ISO"
-    }).save();
-
-    let user = await User.findOne({ where: { email: req.body.email! } });
-
-    if (user) {
-      res.status(409).json({ message: "Email exists" });
+    const { email, careerId } = req.body;
+    if (!email || !careerId) {
+      res.sendStatus(400);
       return;
     }
 
-    user = await User.create({
-      name: req.body.name!,
-      email: req.body.email!,
-      carrerId: career.id
-    });
+    let user = await User.findOne({ where: { email: req.body.email! } });
+    if (user) {
+      res.status(409).json({ message: "Email exists." });
+      return;
+    }
 
+    const career = await Career.findOne(req.body.careerId!);
+    if (!career) {
+      res.status(401).json({ message: "Career not found." });
+      return;
+    }
+
+    const data = new User();
+    data.name = req.body.name!;
+    data.email = email;
+    data.identificationCard = req.body.identificationCard!;
+    data.address = req.body.identificationCard!;
+    data.sex = req.body.sex!;
+    data.countryOrigin = req.body.countryOrigin!;
+    data.ownEmail = req.body.ownEmail!;
+    data.phone = req.body.phone!;
+    data.carrerId = career.id;
+
+    user = await User.create(data);
     user
       .save()
       .then(() => {

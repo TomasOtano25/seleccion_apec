@@ -7,7 +7,9 @@
     "seed": "ts-node seeders/Seed.ts",
     "build": "tsc -b",
     "db:setup": "ts-node ./src/test-utils/setup.ts",
-    "test": "cross-env NODE_ENV=test mocha -r ts-node/register src/tests/*.spec.ts --timeout 5000 --exit"
+    "test": "cross-env NODE_ENV=test mocha -r ts-node/register src/tests/*.spec.ts --timeout 5000 --exit",
+    "coverage": "cross-env NODE_ENV=test nyc mocha -r ts-node/register src/tests/*.spec.ts --timeout 5000 --exit",
+    "clear:coverage": "rimraf coverage/** && rimraf .nyc_output/**"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -49,9 +51,30 @@
     "jest": "^24.5.0",
     "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
+    "rimraf": "^2.6.3",
+    "source-map-support": "^0.5.11",
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.3",
     "typescript": "^3.3.4000"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "src/tests/*.ts",
+      "src/tests/*.spec.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "lcov"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true
   }
 }
